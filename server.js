@@ -1,7 +1,7 @@
 console.log('Running!')
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const connectionString = 'mongodb+srv://angelimcd:q1vJpMWHGdjM1LdZ@cluster0.uwq1v.mongodb.net/?retryWrites=true&w=majority'
