@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-   <h1> CRUD-Y</h1>
+   <h1> CRUD-Y app is crudy</h1>
    <form action="/quotes" method="POST">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Submit</button>
+    <button type="submit">Create a thing</button>
   </form> 
 
-  <h2> Quotes </h2>
+  <h2> Here is a list of things </h2>
 
 <ul class="quotes">
   <!-- Loop through quotes -->
@@ -30,16 +30,17 @@
 </ul>
 <div>
     <h2>Update the thing</h2>
-    <button id="update-button">Edit</button>
+    <button id="update-button">Update</button>
 </div>
-<script src="/main.js"></script>
+
 <div>
-    <h2>Delete</h2>
+    <h2>Delete the thing</h2>
     <p>
-      Delete one thing or maybe not.
+      Delete a thing. Or don't. It's up to you.
     </p>
     <button id="delete-button">Delete the thing</button>
   </div>
   <div id="message"></div>
 </body>
+<script src="/main.js"></script>
 </html>

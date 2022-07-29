@@ -9,18 +9,20 @@ require('dotenv').config()
 // MongoClient.connect(connectionString, )
 // .then(client => {
 //     console.log('Connected to Database')
-//     const db = client.db('star-wars-quotes')
-//     const quotesCollection = db.collection('quotes')
-let db,
-    dbConnectionStr = process.env.DB_STRING, //going into the env file for your connection string
-    dbName = 'star-wars-quotes'
+   
+    
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })//connecting to mongodb 
+    
+   const dbConnectionStr = process.env.DB_STRING 
+   
+    
+
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {
-        console.log(`Connected to ${dbName} Database`)//console.log to let you know it's connected to the database
-        db = client.db(dbName)
-
-    app.set('view engine', 'ejs')
+        const db = client.db('star-wars-quotes')
+        const quotesCollection = db.collection('quotes')
+        console.log(`Connected to Database`)
+        app.set('view engine', 'ejs')
 
     //Middleware//
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -54,11 +56,12 @@ app.post('/quotes', (req, res) => {
             }
         },
         {
-            upsert: true //insert on if there is nothing matching 'Yoda'
+            upsert: true 
         }
       )
         .then(result => {
             res.json('Success')
+            console.log('success updating one')
             
         })
 
@@ -67,7 +70,7 @@ app.post('/quotes', (req, res) => {
 
   app.delete('/quotes', (req, res) => {
     quotesCollection.deleteOne(
-        { name: req.body.name }
+        { name: req.body.name}
       )
         .then(result => {
             if (result.deletedCount === 0) {
