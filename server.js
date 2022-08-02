@@ -6,13 +6,7 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
-// MongoClient.connect(connectionString, )
-// .then(client => {
-//     console.log('Connected to Database')
-   
-    
 
-    
    const dbConnectionStr = process.env.DB_STRING 
    
     

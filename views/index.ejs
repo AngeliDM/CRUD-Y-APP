@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD-Y APP</title>
+    <title>Task Tracker</title>
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-   <h1> CRUD-Y app is crudy</h1>
+   <h1> Task Tracker</h1>
    <form action="/quotes" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Create a thing</button>
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Task" name="quote">
+    <button type="submit">Create a task</button>
   </form> 
 
-  <h2> Here is a list of things </h2>
+  <h2> Tasks to be completed  </h2>
 
 <ul class="quotes">
   <!-- Loop through quotes -->
@@ -29,16 +29,17 @@
   <% } %>
 </ul>
 <div>
-    <h2>Update the thing</h2>
-    <button id="update-button">Update</button>
+    <h2>Add a random name and task</h2>
+    <p>Add a random name and task to the board</p>
+    <button id="update-button">Add</button>
 </div>
 
 <div>
-    <h2>Delete the thing</h2>
+    <h2>Remove a task</h2>
     <p>
-      Delete a thing. Or don't. It's up to you.
+      Delete a random name and task from the board
     </p>
-    <button id="delete-button">Delete the thing</button>
+    <button id="delete-button">Delete a task</button>
   </div>
   <div id="message"></div>
 </body>
